@@ -1,0 +1,212 @@
+.banner-template-container {
+  position: relative;
+  display: flex;
+
+  .left-content {
+    width: 100%;
+    max-width: 420px;
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+  }
+
+  .right-content {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-16%, -50%);
+    display: flex;
+    gap: 50px;
+    color: #262e2e;
+
+    .content-block {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .upper-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #262e2e;
+      }
+
+      .content-image {
+        width: 100%;
+        max-width: 200px;
+      }
+
+      .price-range {
+        display: flex;
+        margin: 0 auto 15px;
+
+        .price-value {
+          font-size: 20px;
+          font-weight: 500;
+          margin: 0 6px;
+        }
+
+        .line-through {
+          text-decoration: line-through;
+        }
+      }
+
+      .offer-badge {
+        font-size: 18px;
+        font-weight: 600;
+        background: pink;
+        padding: 2px 2px 3px;
+        width: 100%;
+        max-width: 90px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.banner-template {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px;
+  width: 100%;
+  max-width: 1520px;
+  height: 380px;
+  background-color: #f5f8fa;
+  // background-image: url("/assets/images/creative-bg-1.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  h1 {
+    font-size: 46px;
+    color: #262e2e;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 15px 0 15px;
+  }
+
+  .brand-image {
+    width: 100%;
+    max-width: 130px;
+  }
+
+  .btn-container {
+    display: flex;
+    width: 100%;
+
+    .button {
+      pointer-events: none;
+      font-size: 1rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      padding: 8px 12px 8px;
+      background-color: #ac0236;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+  }
+}
+
+// mobile style
+.mobile-banner-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  gap: 20px;
+  padding: 40px 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  background-color: #f5f8fa;
+  background-image: url("/assets/images/creative-mobile-bg-1.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .brand-image {
+    width: 100%;
+    max-width: 130px;
+  }
+
+  h1 {
+    font-size: 50px;
+    color: #262e2e;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 15px 0 12px;
+  }
+
+  .content-list {
+    display: flex;
+    gap: 35px;
+    margin-top: 30px;
+  }
+
+  .content-block {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .upper-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #262e2e;
+  }
+
+  .content-image {
+    width: 100%;
+    max-width: 210px;
+  }
+
+  .price-range {
+    display: flex;
+    margin: 0 auto 15px;
+
+    .price-value {
+      font-size: 23px;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+
+    .line-through {
+      text-decoration: line-through;
+    }
+  }
+
+  .offer-badge {
+    font-size: 28px;
+    font-weight: 600;
+    background: pink;
+    padding: 5px 5px 6px;
+    width: 100%;
+    max-width: 130px;
+    margin: auto;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .button {
+      pointer-events: none;
+      font-size: 20px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      padding: 10px 20px 10px;
+      background-color: #ac0236;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+  }
+}
