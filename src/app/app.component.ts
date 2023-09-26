@@ -4,44 +4,110 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import html2canvas, { Options } from 'html2canvas';
 
 
-export const Template = (`<div class="banner-template-container">
-  <div class="banner-template" style="background-image: url('/assets/images/creative-bg-1.png'); id="template-background-image">
-    <div class="left-content" id="left-content">
-      <img
-        class="brand-image"
-        id="template-brand-logo"
-        src="/assets/images/gopro-logo.png"
-      />
-      <h1 id="template-heading">ACTION CAMERAS</h1>
-      <div class="btn-container" >
-      <a id="template-button-text" href="javascript:void(0);" class="button">
-        Shop Now</a
-      >
-    </div>
-    </div> <div class="right-content" id = "right-content" >
-    <div class="content-block">
-      <span id="template-product-title-1" class="upper-title"> HERO11 Black</span>
-      <img class="content-image" id = "template-product-image-1" src =
-      "/assets/images/hero-11.png" />
-      <div class="price-range">
-        <span id="product-price-1" class="price-value">₹39,990</span>
-        <span id = "product-discounted-price-1" class="price-value line-through"
-        > 25000</span>
+export const Template = (`<div class="banner-template-container" style="  position: relative;
+  display: flex;">
+  <div class="banner-template" style="background-image: url('/assets/images/creative-bg-1.png');display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px;
+  width: 100%;
+  max-width: 1520px;
+  height: 380px;
+  background-color: #f5f8fa;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; " id="template-background-image">
+    <div class="left-content" id="left-content" style="  width: 100%;
+    max-width: 420px;
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    transform: translate(-50%, -50%)">
+      <img class="brand-image" style=" width: 100%;
+    max-width: 130px" id="template-brand-logo" src="/assets/images/gopro-logo.png" />
+      <h1 style=" font-size: 46px;
+    color: #262e2e;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 15px 0 15px;" id="template-heading">ACTION CAMERAS</h1>
+      <div class="btn-container" style="display: flex;
+    width: 100%">
+        <a id="template-button-text" href="javascript:void(0);" class="button" style=" pointer-events: none;
+      font-size: 1rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      padding: 8px 12px 8px;
+      background-color: #ac0236;
+      text-decoration: none;
+      border-radius: 3px">
+          Shop Now</a>
       </div>
     </div>
+    <div class="right-content" id="right-content" style="  position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-16%, -50%);
+    display: flex;
+    gap: 50px;
+    color: #262e2e">
       <div class="content-block">
-      <span id="template-product-title-2" class="upper-title"> HERO11 White</span>
-      <img class="content-image" id = "template-product-image-2" src =
-      "/assets/images/hero-11.png" />
-      <div class="price-range">
-        <span id="product-price-2" class="price-value">₹26,990</span>
-        <span id = "product-discounted-price-2" class="price-value line-through"
-        > 21700</span>
+        <span id="template-product-title-1" class="upper-title"> HERO11 Black</span>
+        <img class="content-image" id="template-product-image-1"  style=" max-width: 100%;width: 170px"
+   src="/assets/images/hero-11.png" />
+        <div class="price-range" style=" display: flex;
+        margin: 0 auto 15px">
+          <span id="product-price-1" class="price-value" style="font-size: 20px;
+          font-weight: 500;
+          margin: 0 6px;">₹39,990</span>
+          <span id="product-discounted-price-1" class="price-value line-through" style="font-size: 20px;  text-decoration: line-through;
+          font-weight: 500;
+          margin: 0 6px;"> 25000</span>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <span id="template-product-title-1" class="upper-title"> HERO11 Black</span>
+        <img class="content-image"  style=" max-width: 100%;    width: 170px
+    " id="template-product-image-1" src="/assets/images/hero-11.png" />
+        <div class="price-range" style=" display: flex;
+                margin: 0 auto 15px">
+          <span id="product-price-1" class="price-value" style="font-size: 20px;
+                  font-weight: 500;
+                  margin: 0 6px;">₹39,990</span>
+          <span id="product-discounted-price-1" class="price-value line-through" style="font-size: 20px;  text-decoration: line-through;
+                  font-weight: 500;
+                  margin: 0 6px;"> 25000</span>
+        </div>
+      </div>
+      <div class="content-block" style=" display: flex;
+      flex-direction: column;
+      text-align: center">
+        <span id="template-product-title-2" class="upper-title" style=" font-size: 22px;
+        font-weight: 600;
+        color: #262e2e"> HERO11 White</span>
+        <img class="content-image" id="template-product-image-2"  style=" max-width: 100% ;    width: 170px" src="/assets/images/hero-11.png" />
+        <div class="price-range" style=" display: flex;
+        margin: 0 auto 15px">
+          <span id="product-price-2" class="price-value" style="font-size: 20px;
+          font-weight: 500;
+          margin: 0 6px;">₹26,990</span>
+          <span id="product-discounted-price-2" class="price-value line-through" style="font-size: 20px;
+          font-weight: 500;
+          margin: 0 6px; text-decoration: line-through"> 21700</span>
+        </div>
+      </div>
+
+      <div id="badge-title" class="offer-badge" style="   font-size: 18px;
+        font-weight: 600;
+        background: pink;
+        padding: 2px 2px 3px;
+        width: 100%;
+        max-width: 90px;
+        margin: auto"> 22% OFF
       </div>
     </div>
-    <div id = "badge-title" class="offer-badge" > 22% OFF
-   </div>
-   </div>
   </div>
 </div>`)
 
@@ -82,7 +148,7 @@ export class AppComponent implements OnInit {
   canvas!: HTMLCanvasElement;
   brandLogo = "/assets/images/gopro-logo.png";
   // backgroundImageUrl = "/assets/images/creative-bg-1.png"
-
+  highestImageId: number
   backgroundImage: HTMLDivElement | null;
   productBrandLogo: HTMLImageElement | null;
   heading: HTMLHeadingElement | null;
@@ -114,10 +180,13 @@ export class AppComponent implements OnInit {
     const tempElement = document.createElement('div');
     tempElement.innerHTML = Template;
 
+    this.highestImageId = this.findHighestImageId(Template);
+    console.log(tempElement.querySelector('#template-heading').textContent)
+
     // Extract data and patch into the form group
     this.creativeForm.patchValue({
       heading: tempElement.querySelector('#template-heading').textContent,
-      backgroundImage: tempElement.querySelector('#template-background-image'),
+      backgroundImage: tempElement.querySelector('#template-background-image').attributes.getNamedItem('src'),
       brandLogo: tempElement.querySelector('#template-brand-logo').attributes.getNamedItem('src')?.nodeValue,
       buttonText: tempElement.querySelector('#template-button-text').textContent,
 
@@ -135,6 +204,7 @@ export class AppComponent implements OnInit {
     const container = this.htmlContainer.nativeElement;
     const htmlString = Template; // Replace with your HTML string
     container.innerHTML = htmlString;
+    this.modifyTemplate();
   }
 
   // Function to create a FormGroup for a product
@@ -244,6 +314,15 @@ export class AppComponent implements OnInit {
       const brandLogoElement = tempElement.querySelector('#template-brand-logo');
       const buttonTextElement = tempElement.querySelector('#template-button-text');
 
+      for (let i = 1; i <= this.highestImageId; i++) {
+        const productTitleElement = tempElement.querySelector(`#template-product-title-${i}`);
+        const productImageElement = tempElement.querySelector(`#template-product-image-${i}`);
+        const productPriceElement = tempElement.querySelector(`#product-price-${i}`);
+        const productDiscountPriceElement = tempElement.querySelector(`#product-discounted-price-${i}`);
+
+
+      }
+
       if (headingElement) {
         headingElement.textContent = heading;
       }
@@ -257,21 +336,45 @@ export class AppComponent implements OnInit {
         buttonTextElement.textContent = buttonText;
       }
 
-      this.htmlContainer.nativeElement = tempElement;
-    })
+
+      this.htmlContainer.nativeElement.innerHTML = tempElement.innerHTML;
+    }
+
+
+    )
+
   }
 
 
-  private initializeDOMVariables() {
-    const parent = this.document.getElementById(TemplateDOMIds.capture);
-    this.backgroundImage = parent?.querySelector(`#${TemplateDOMIds.templateBackgroundImage}`) as HTMLDivElement | null;
-    this.productBrandLogo = parent?.querySelector(`#${TemplateDOMIds.templateBrandLogo}`) as HTMLImageElement | null;
-    this.heading = parent?.querySelector(`#${TemplateDOMIds.templateHeading}`) as HTMLHeadingElement | null;
-    this.buttonText = parent?.querySelector(`#${TemplateDOMIds.templateButtonText}`) as HTMLAnchorElement | null;
-    this.productTitle = parent?.querySelector(`#${TemplateDOMIds.templateProductTitle}`) as HTMLSpanElement | null;
-    this.productImage = parent?.querySelector(`#${TemplateDOMIds.templateProductImage}`) as HTMLImageElement | null;
-    this.productPrice = parent?.querySelector(`#${TemplateDOMIds.templateProductPrice}`) as HTMLSpanElement | null;
-    this.productDiscountedPrice = parent?.querySelector(`#${TemplateDOMIds.templateProductDiscountedPrice}`) as HTMLSpanElement | null;
-    this.badgeTitle = parent?.querySelector(`#${TemplateDOMIds.templateBadgeTitle}`) as HTMLDivElement | null
+
+
+
+  findHighestImageId(template: string): number {
+    // Create a temporary element to parse the HTML
+    const tempElement = document.createElement('div');
+    tempElement.innerHTML = template;
+
+    // Initialize the highestId to a minimum value
+    let highestId = -1;
+
+    // Select all img elements
+    const imgElements = tempElement.querySelectorAll('img');
+
+    // Iterate through img elements to find the highest number in the id attribute
+    imgElements.forEach((imgElement: HTMLImageElement) => {
+      const id = imgElement.id;
+      if (id.startsWith('template-product-image-')) {
+        const numberPart = id.replace('template-product-image-', '');
+        const number = parseInt(numberPart, 10);
+        if (!isNaN(number) && number > highestId) {
+          highestId = number;
+        }
+      }
+    });
+
+    return highestId;
   }
+
+
+
 }
