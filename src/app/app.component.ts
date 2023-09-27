@@ -225,7 +225,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-
   capture() {
     const options: Partial<Options> = {
       useCORS: true,
@@ -299,19 +298,40 @@ export class AppComponent implements OnInit {
   modifyTemplate() {
 
     this.creativeForm.valueChanges.subscribe(value => {
-
       const tempElement = document.createElement('div');
       tempElement.innerHTML = Template;
 
-
       const { heading, backgroundImage, brandLogo, buttonText, badgeTitle, productList } = value
-
 
       const headingElement = tempElement.querySelector('#template-heading');
       const backgroundImageElement = tempElement.querySelector('#template-background-image');
       const brandLogoElement = tempElement.querySelector('#template-brand-logo');
       const buttonTextElement = tempElement.querySelector('#template-button-text');
       const discountBadgeElement = tempElement.querySelector('#badge-title');
+
+
+      if (headingElement) {
+        headingElement.textContent = heading;
+      }
+      if (backgroundImageElement) {
+
+        const currentStyle = backgroundImageElement.getAttribute('style');
+
+        const newStyle = currentStyle.replace(/background-image: url\(['"][^'"]+['"]\)/, `background-image: url('${backgroundImage}')`);
+
+        backgroundImageElement.setAttribute('style', newStyle);
+      }
+      if (brandLogoElement) {
+        brandLogoElement.setAttribute('src', brandLogo);
+      }
+      if (buttonTextElement) {
+        buttonTextElement.textContent = buttonText;
+      }
+
+      if (discountBadgeElement) {
+        discountBadgeElement.textContent = badgeTitle;
+      }
+
 
       for (let i = 0; i < this.highestImageId; i++) {
         const productTitleElement = tempElement.querySelector(`#template-product-title-${i + 1}`);
@@ -335,22 +355,6 @@ export class AppComponent implements OnInit {
 
       }
 
-      if (headingElement) {
-        headingElement.textContent = heading;
-      }
-      if (backgroundImageElement) {
-        backgroundImageElement.setAttribute('src', backgroundImage);
-      }
-      if (brandLogoElement) {
-        brandLogoElement.setAttribute('src', brandLogo);
-      }
-      if (buttonTextElement) {
-        buttonTextElement.textContent = buttonText;
-      }
-
-      if (discountBadgeElement) {
-        discountBadgeElement.textContent = badgeTitle;
-      }
       this.htmlContainer.nativeElement.innerHTML = tempElement.innerHTML;
     }
     )
