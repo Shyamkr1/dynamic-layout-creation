@@ -6,7 +6,7 @@ import html2canvas, { Options } from 'html2canvas';
 
 export const Template = (`<div class="banner-template-container" style="  position: relative;
   display: flex;">
-  <div class="banner-template" style="background-image: url('/assets/images/creative-bg-1.png');display: flex;
+  <div class="banner-template" id="template-background-image" style="background-image: url('/assets/images/creative-bg-1.png');display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px 20px;
@@ -16,7 +16,7 @@ export const Template = (`<div class="banner-template-container" style="  positi
   background-color: #f5f8fa;
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 100% 100%; " id="template-background-image">
+  background-size: 100% 100%; " >
     <div class="left-content" id="left-content" style="  width: 100%;
     max-width: 420px;
     position: absolute;
@@ -181,18 +181,18 @@ export class AppComponent implements OnInit {
     tempElement.innerHTML = Template;
 
     this.highestImageId = this.findHighestImageId(Template);
-    console.log(tempElement.querySelector('#template-heading').textContent)
 
     // Extract data and patch into the form group
     this.creativeForm.patchValue({
+
       heading: tempElement.querySelector('#template-heading').textContent,
-      backgroundImage: tempElement.querySelector('#template-background-image').attributes.getNamedItem('src'),
+      backgroundImage: console.log(tempElement.querySelector('#template-background-image')),
       brandLogo: tempElement.querySelector('#template-brand-logo').attributes.getNamedItem('src')?.nodeValue,
       buttonText: tempElement.querySelector('#template-button-text').textContent,
 
     });
 
-    for (let i = 1; i < 10; i++) { // Assuming you have two products
+    for (let i = 1; i <= this.highestImageId; i++) { // Assuming you have two products
       const productFormGroup = this.createProductFormGroup(i);
       const productControlArray = this.creativeForm.get('productList') as FormArray;
       productControlArray.push(productFormGroup);
@@ -211,19 +211,18 @@ export class AppComponent implements OnInit {
   createProductFormGroup(index: number): FormGroup {
     const tempElement = document.createElement('div');
     tempElement.innerHTML = Template;
-    const productTitle = tempElement.querySelector(`#template-product-title-${index}`).textContent;
-    const productImage = tempElement.querySelector(`#template-product-image-${index}`).attributes.getNamedItem('src').nodeName;
-    const productPrice = tempElement.querySelector(`#product-price-${index}`).textContent;
-    const productDiscountPrice = tempElement.querySelector(`#product-discounted-price-${index}`).textContent;
+    const productTitle = tempElement.querySelector(`#template-product-title-${index}`)?.textContent;
+    const productImage = tempElement.querySelector(`#template-product-image-${index}`);
+    const productPrice = tempElement.querySelector(`#product-price-${index}`)?.textContent;
+    const productDiscountPrice = tempElement.querySelector(`#product-discounted-price-${index}`)?.textContent;
 
-    if (productTitle || productImage || productPrice || productDiscountPrice) {
-      return this.formBuilder.group({
-        productTitle,
-        productImage,
-        productPrice,
-        productDiscountPrice
-      });
-    }
+    return this.formBuilder.group({
+      productTitle: [productTitle],
+      productImage: [productImage],
+      productPrice: [productPrice],
+      productDiscountPrice: [productDiscountPrice]
+    });
+
 
   }
 
