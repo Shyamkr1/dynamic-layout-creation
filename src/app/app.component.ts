@@ -193,7 +193,7 @@ export class AppComponent implements OnInit {
 
     });
 
-    for (let i = 1; i <= this.highestImageId; i++) { // Assuming you have two products
+    for (let i = 1; i <= this.highestImageId; i++) {
       const productFormGroup = this.createProductFormGroup(i);
       const productControlArray = this.creativeForm.get('productList') as FormArray;
       productControlArray.push(productFormGroup);
