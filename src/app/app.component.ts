@@ -186,7 +186,7 @@ export class AppComponent implements OnInit {
     this.creativeForm.patchValue({
 
       heading: tempElement.querySelector('#template-heading').textContent,
-      backgroundImage: tempElement.querySelector('#template-background-image'),
+      backgroundImage: tempElement.querySelector('#template-background-image').getAttribute('style').match(/background-image:\s*url\(['"]?([^'"]+)['"]?\)/)[1],
       brandLogo: tempElement.querySelector('#template-brand-logo').attributes.getNamedItem('src')?.nodeValue,
       buttonText: tempElement.querySelector('#template-button-text').textContent,
       badgeTitle: tempElement.querySelector('#badge-title').textContent,
