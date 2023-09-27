@@ -141,7 +141,7 @@ export class AppComponent implements OnInit {
 
   title = 'layout-section';
   @ViewChild('htmlContainer', { static: false }) htmlContainer: ElementRef;
-
+  // Template = Template;
   Upload = Upload;
   // templateHtml: SafeHtml;
   capturedImage = "";
@@ -186,9 +186,10 @@ export class AppComponent implements OnInit {
     this.creativeForm.patchValue({
 
       heading: tempElement.querySelector('#template-heading').textContent,
-      backgroundImage: console.log(tempElement.querySelector('#template-background-image')),
+      backgroundImage: tempElement.querySelector('#template-background-image'),
       brandLogo: tempElement.querySelector('#template-brand-logo').attributes.getNamedItem('src')?.nodeValue,
       buttonText: tempElement.querySelector('#template-button-text').textContent,
+      badgeTitle: tempElement.querySelector('#badge-title').textContent,
 
     });
 
@@ -212,18 +213,16 @@ export class AppComponent implements OnInit {
     const tempElement = document.createElement('div');
     tempElement.innerHTML = Template;
     const productTitle = tempElement.querySelector(`#template-product-title-${index}`)?.textContent;
-    const productImage = tempElement.querySelector(`#template-product-image-${index}`);
+    const productImage = tempElement.querySelector(`#template-product-image-${index}`).attributes.getNamedItem('src')?.nodeValue;
     const productPrice = tempElement.querySelector(`#product-price-${index}`)?.textContent;
-    const productDiscountPrice = tempElement.querySelector(`#product-discounted-price-${index}`)?.textContent;
+    const productDiscountedPrice = tempElement.querySelector(`#product-discounted-price-${index}`)?.textContent;
 
     return this.formBuilder.group({
       productTitle: [productTitle],
       productImage: [productImage],
       productPrice: [productPrice],
-      productDiscountPrice: [productDiscountPrice]
+      productDiscountedPrice: [productDiscountedPrice]
     });
-
-
   }
 
 
@@ -312,6 +311,7 @@ export class AppComponent implements OnInit {
       const backgroundImageElement = tempElement.querySelector('#template-background-image');
       const brandLogoElement = tempElement.querySelector('#template-brand-logo');
       const buttonTextElement = tempElement.querySelector('#template-button-text');
+      const discountBadgeElement = tempElement.querySelector('#badge-title');
 
       for (let i = 0; i < this.highestImageId; i++) {
         const productTitleElement = tempElement.querySelector(`#template-product-title-${i + 1}`);
@@ -319,14 +319,12 @@ export class AppComponent implements OnInit {
         const productPriceElement = tempElement.querySelector(`#product-price-${i + 1}`);
         const productDiscountPriceElement = tempElement.querySelector(`#product-discounted-price-${i + 1}`);
 
-
         if (productTitleElement) {
-
           productTitleElement.textContent = productList[i]?.productTitle;
         }
 
         if (productImageElement) {
-          productImageElement
+          productImageElement.setAttribute('src', productList[i]?.productImage);
         }
         if (productPriceElement) {
           productPriceElement.textContent = productList[i]?.productPrice;
@@ -348,6 +346,10 @@ export class AppComponent implements OnInit {
       }
       if (buttonTextElement) {
         buttonTextElement.textContent = buttonText;
+      }
+
+      if (discountBadgeElement) {
+        discountBadgeElement.textContent = badgeTitle;
       }
       this.htmlContainer.nativeElement.innerHTML = tempElement.innerHTML;
     }

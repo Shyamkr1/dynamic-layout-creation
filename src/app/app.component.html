@@ -28,6 +28,7 @@
         </div>
 
         <input class="custom-form-control" formControlName="buttonText" />
+        <input class="custom-form-control" formControlName="badgeTitle" />
       </div>
       <div formArrayName="productList">
         <div *ngFor="let product of productList.controls; let i = index">
@@ -46,7 +47,7 @@
             </div>
 
             <input class="custom-form-control" formControlName="productPrice" />
-            <!-- <input class="custom-form-control" formControlName="productDiscounterPrice" /> -->
+            <input class="custom-form-control" formControlName="productDiscountedPrice" />
           </div>
         </div>
       </div>
@@ -63,6 +64,8 @@
 
     <div id="capture">
       <div #htmlContainer></div>
+
+      <!-- <iframe [srcdoc]="Template"></iframe> -->
 
     </div>
   </form>
