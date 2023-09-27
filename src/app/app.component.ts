@@ -68,15 +68,15 @@ export const Template = (`<div class="banner-template-container" style="  positi
       </div>
 
       <div class="content-block">
-        <span id="template-product-title-1" class="upper-title"> HERO11 Black</span>
+        <span id="template-product-title-2" class="upper-title"> HERO11 Black</span>
         <img class="content-image"  style=" max-width: 100%;    width: 170px
-    " id="template-product-image-1" src="/assets/images/hero-11.png" />
+    " id="template-product-image-2" src="/assets/images/hero-11.png" />
         <div class="price-range" style=" display: flex;
                 margin: 0 auto 15px">
-          <span id="product-price-1" class="price-value" style="font-size: 20px;
+          <span id="product-price-2" class="price-value" style="font-size: 20px;
                   font-weight: 500;
                   margin: 0 6px;">₹39,990</span>
-          <span id="product-discounted-price-1" class="price-value line-through" style="font-size: 20px;  text-decoration: line-through;
+          <span id="product-discounted-price-2" class="price-value line-through" style="font-size: 20px;  text-decoration: line-through;
                   font-weight: 500;
                   margin: 0 6px;"> 25000</span>
         </div>
@@ -84,16 +84,16 @@ export const Template = (`<div class="banner-template-container" style="  positi
       <div class="content-block" style=" display: flex;
       flex-direction: column;
       text-align: center">
-        <span id="template-product-title-2" class="upper-title" style=" font-size: 22px;
+        <span id="template-product-title-3" class="upper-title" style=" font-size: 22px;
         font-weight: 600;
         color: #262e2e"> HERO11 White</span>
-        <img class="content-image" id="template-product-image-2"  style=" max-width: 100% ;    width: 170px" src="/assets/images/hero-11.png" />
+        <img class="content-image" id="template-product-image-3"  style=" max-width: 100% ;    width: 170px" src="/assets/images/hero-11.png" />
         <div class="price-range" style=" display: flex;
         margin: 0 auto 15px">
-          <span id="product-price-2" class="price-value" style="font-size: 20px;
+          <span id="product-price-3" class="price-value" style="font-size: 20px;
           font-weight: 500;
           margin: 0 6px;">₹26,990</span>
-          <span id="product-discounted-price-2" class="price-value line-through" style="font-size: 20px;
+          <span id="product-discounted-price-3" class="price-value line-through" style="font-size: 20px;
           font-weight: 500;
           margin: 0 6px; text-decoration: line-through"> 21700</span>
         </div>
@@ -313,12 +313,27 @@ export class AppComponent implements OnInit {
       const brandLogoElement = tempElement.querySelector('#template-brand-logo');
       const buttonTextElement = tempElement.querySelector('#template-button-text');
 
-      for (let i = 1; i <= this.highestImageId; i++) {
-        const productTitleElement = tempElement.querySelector(`#template-product-title-${i}`);
-        const productImageElement = tempElement.querySelector(`#template-product-image-${i}`);
-        const productPriceElement = tempElement.querySelector(`#product-price-${i}`);
-        const productDiscountPriceElement = tempElement.querySelector(`#product-discounted-price-${i}`);
+      for (let i = 0; i < this.highestImageId; i++) {
+        const productTitleElement = tempElement.querySelector(`#template-product-title-${i + 1}`);
+        const productImageElement = tempElement.querySelector(`#template-product-image-${i + 1}`);
+        const productPriceElement = tempElement.querySelector(`#product-price-${i + 1}`);
+        const productDiscountPriceElement = tempElement.querySelector(`#product-discounted-price-${i + 1}`);
 
+
+        if (productTitleElement) {
+
+          productTitleElement.textContent = productList[i]?.productTitle;
+        }
+
+        if (productImageElement) {
+          productImageElement
+        }
+        if (productPriceElement) {
+          productPriceElement.textContent = productList[i]?.productPrice;
+        }
+        if (productDiscountPriceElement) {
+          productDiscountPriceElement.textContent = productList[i]?.productDiscountPrice;
+        }
 
       }
 
@@ -334,19 +349,10 @@ export class AppComponent implements OnInit {
       if (buttonTextElement) {
         buttonTextElement.textContent = buttonText;
       }
-
-
       this.htmlContainer.nativeElement.innerHTML = tempElement.innerHTML;
     }
-
-
     )
-
   }
-
-
-
-
 
   findHighestImageId(template: string): number {
     // Create a temporary element to parse the HTML
@@ -373,7 +379,5 @@ export class AppComponent implements OnInit {
 
     return highestId;
   }
-
-
 
 }
