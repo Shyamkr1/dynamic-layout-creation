@@ -35,7 +35,7 @@
               <div [formGroup]="creativeForm">
                 <div>
                   <input type="file" [id]="'productimage' + i" accept=".png,.jpg,.webp" style="display: none"
-                    formControlName="productBackgroundFileUpload" (change)="patchImage($event, 'product_img_' + i)" />
+                    (change)="patchImage($event, 'product_img_' + i)" />
                   <label [for]="'productimage' + i">Upload</label>
                 </div>
               </div>

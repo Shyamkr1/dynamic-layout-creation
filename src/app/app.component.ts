@@ -414,21 +414,10 @@ export class AppComponent implements OnInit {
   capturedImage = "";
   canvas!: HTMLCanvasElement;
   imageCount: number
-  backgroundImage: HTMLDivElement | null;
-  productBrandLogo: HTMLImageElement | null;
-  heading: HTMLHeadingElement | null;
-  buttonText: HTMLAnchorElement | null;
-  productTitle: HTMLSpanElement | null;
-  productImage: HTMLImageElement | null;
-  productPrice: HTMLSpanElement | null;
-  productDiscountedPrice: HTMLSpanElement | null;
-  badgeTitle: HTMLDivElement | null
 
   creativeForm = this.formBuilder.group({
     heading: [''],
     backgroundImage: [''],
-    backgroundFileUpload: [''],
-    productBackgroundFileUpload: [''],
     brandLogo: [''],
     buttonText: [''],
     productList: this.formBuilder.array([])
@@ -441,7 +430,56 @@ export class AppComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private document: Document, private formBuilder: FormBuilder) { }
 
+
+  // ngOnInit(): void {
+  //   const tempElement = this.createAndInitializeTemplate(Template);
+  //   this.imageCount = this.findHighestImageId(Template);
+
+  //   const formControls = {
+  //     heading: '#template-heading',
+  //     backgroundImage: '#template-background-image',
+  //     buttonText: '#template-button-text',
+  //   };
+
+  //   // Check if brandLogo exists in the template
+  //   const brandLogoElement = tempElement.querySelector('#template-brand-logo');
+  //   if (brandLogoElement) {
+  //     formControls['brandLogo'] = '#template-brand-logo';
+  //   }
+
+  //   const formValues = Object.keys(formControls).reduce((values, key) => {
+  //     const element = tempElement.querySelector(formControls[key]);
+  //     values[key] = element?.textContent || null;
+  //     if (key === 'backgroundImage' || key === 'brandLogo') {
+  //       values[key] = element?.getAttribute('src') || null;
+  //     }
+  //     return values;
+  //   }, {});
+
+  //   this.creativeForm.patchValue(formValues);
+
+  //   for (let i = 1; i <= this.imageCount; i++) {
+  //     const productFormGroup = this.createProductFormGroup(i);
+  //     this.productList.push(productFormGroup);
+  //   }
+  // }
+
+
   ngOnInit(): void {
+    this.initializeFormValues();
+    this.createAndInitializeProductFormGroups();
+  }
+
+  ngAfterViewInit() {
+    // Access the HTML container and set its innerHTML
+    const container = this.htmlContainer.nativeElement;
+    const htmlString = Template; // Replace with your HTML string
+    container.innerHTML = htmlString;
+    this.modifyTemplate();
+  }
+
+
+  initializeFormValues() {
     const tempElement = this.createAndInitializeTemplate(Template);
     this.imageCount = this.findHighestImageId(Template);
 
@@ -451,7 +489,6 @@ export class AppComponent implements OnInit {
       buttonText: '#template-button-text',
     };
 
-    // Check if brandLogo exists in the template
     const brandLogoElement = tempElement.querySelector('#template-brand-logo');
     if (brandLogoElement) {
       formControls['brandLogo'] = '#template-brand-logo';
@@ -467,23 +504,7 @@ export class AppComponent implements OnInit {
     }, {});
 
     this.creativeForm.patchValue(formValues);
-
-    for (let i = 1; i <= this.imageCount; i++) {
-      const productFormGroup = this.createProductFormGroup(i);
-      const productControlArray = this.creativeForm.get('productList') as FormArray;
-      productControlArray.push(productFormGroup);
-    }
   }
-
-
-  ngAfterViewInit() {
-    // Access the HTML container and set its innerHTML
-    const container = this.htmlContainer.nativeElement;
-    const htmlString = Template; // Replace with your HTML string
-    container.innerHTML = htmlString;
-    this.modifyTemplate();
-  }
-
 
   createAndInitializeTemplate(templateHTML: string) {
     const tempElement = document.createElement('div');
@@ -491,34 +512,34 @@ export class AppComponent implements OnInit {
     return tempElement;
   }
 
-  // Function to create a FormGroup for a product
-  createProductFormGroup(index: number): FormGroup {
-    const tempElement = this.createAndInitializeTemplate(Template);
 
-    const productTitle = tempElement.querySelector(`#template-product-title-${index}`)?.textContent;
-    const productImage = tempElement.querySelector(`#template-product-image-${index}`).attributes.getNamedItem('src')?.nodeValue;
-    const productPrice = tempElement.querySelector(`#product-price-${index}`)?.textContent;
-    const productDiscountedPriceElement = tempElement.querySelector(`#product-discounted-price-${index}`);
-    const productDiscountBadgeElement = tempElement.querySelector(`#discount-badge-${index}`);
+  createAndInitializeProductFormGroups() {
+    for (let i = 1; i <= this.imageCount; i++) {
+      const tempElement = this.createAndInitializeTemplate(Template);
+      const productTitle = tempElement.querySelector(`#template-product-title-${i}`)?.textContent;
+      const productImage = tempElement.querySelector(`#template-product-image-${i}`).attributes.getNamedItem('src')?.nodeValue;
+      const productPrice = tempElement.querySelector(`#product-price-${i}`)?.textContent;
+      const productDiscountedPriceElement = tempElement.querySelector(`#product-discounted-price-${i}`);
+      const productDiscountBadgeElement = tempElement.querySelector(`#discount-badge-${i}`);
 
-    const formControls = {
-      productTitle: [productTitle],
-      productImage: [productImage],
-      productPrice: [productPrice]
-    };
+      const formControls = {
+        productTitle: [productTitle],
+        productImage: [productImage],
+        productPrice: [productPrice]
+      };
 
-    if (productDiscountedPriceElement) {
-      formControls['productDiscountedPrice'] = [productDiscountedPriceElement.textContent];
+      if (productDiscountedPriceElement) {
+        formControls['productDiscountedPrice'] = [productDiscountedPriceElement.textContent];
+      }
+
+      if (productDiscountBadgeElement) {
+        formControls['productDiscountBadge'] = [productDiscountBadgeElement.textContent];
+      }
+
+      const productFormGroup = this.formBuilder.group(formControls);
+      this.productList.push(productFormGroup);
     }
-
-    if (productDiscountBadgeElement) {
-      formControls['productDiscountBadge'] = [productDiscountBadgeElement.textContent];
-    }
-
-    return this.formBuilder.group(formControls);
   }
-
-
 
   capture() {
     const options: Partial<Options> = {
@@ -545,30 +566,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // patchImage(event: any, formControl: string) {
-
-  //   if (event.target.files && event.target.files[0]) {
-  //     const file = event.target.files[0];
-
-  //     const reader = new FileReader();
-  //     reader.onload = e => {
-  //       switch (formControl) {
-  //         case 'background': this.creativeForm.get("backgroundImage")?.patchValue(reader.result);
-  //           break;
-  //         case 'brandlogo': this.creativeForm.get("brandLogo")?.patchValue(reader.result);
-  //           break;
-  //         case 'product_img_0': this.productList.controls[0].get("productImage")?.patchValue(reader.result);
-  //           break;
-  //         case 'product_img_1': this.productList.controls[1].get("productImage")?.patchValue(reader.result);
-  //           break;
-  //         case 'product_img_2': this.productList.controls[2].get("productImage")?.patchValue(reader.result);
-  //           break;
-  //       }
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // }
-
 
   patchImage(event: any, formControl: Upload | string) {
     if (event.target.files && event.target.files[0]) {
@@ -587,9 +584,8 @@ export class AppComponent implements OnInit {
             // Check if formControl matches the dynamic product image pattern (e.g., product_img_0)
             if (typeof formControl === 'string' && formControl.startsWith('product_img_')) {
               const productIndex = parseInt(formControl.substring(12), 10);
-              const productList = this.creativeForm.get('productList') as FormArray;
-              if (!isNaN(productIndex) && productIndex >= 0 && productIndex < productList.length) {
-                productList.controls[productIndex].get('productImage')?.patchValue(reader.result);
+              if (!isNaN(productIndex) && productIndex >= 0 && productIndex < this.productList.length) {
+                this.productList.controls[productIndex].get('productImage')?.patchValue(reader.result);
               }
             }
             break;
@@ -598,7 +594,6 @@ export class AppComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
-
 
   downloadImage() {
     this.canvas.toBlob(function (blob: any) {
@@ -611,25 +606,22 @@ export class AppComponent implements OnInit {
       a.href = url;
       a.download = 'banner-creative' + '.webp';
       a.click();
-
       window.URL.revokeObjectURL(url);
     });
-
   }
-
 
   modifyTemplate() {
     this.creativeForm.valueChanges.subscribe(value => {
       const tempElement = this.createAndInitializeTemplate(Template);
 
-      const updateElement = (elementId, content) => {
+      const updateElement = (elementId: string, content: string) => {
         const element = tempElement.querySelector(`#${elementId}`);
         if (element) {
           element.textContent = content;
         }
       };
 
-      const updateImageElement = (elementId, src) => {
+      const updateImageElement = (elementId: string, src: string) => {
         const element = tempElement.querySelector(`#${elementId}`);
         if (element) {
           element.setAttribute('src', src);
@@ -665,8 +657,7 @@ export class AppComponent implements OnInit {
 
   findHighestImageId(template: string): number {
     // Create a temporary element to parse the HTML
-    const tempElement = document.createElement('div');
-    tempElement.innerHTML = template;
+    const tempElement = this.createAndInitializeTemplate(Template);
 
     // Initialize the highestId to a minimum value
     let imageCount = -1;
