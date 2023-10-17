@@ -1,0 +1,1578 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+// ----------- banner-1 ------------
+.banner-1 {
+  // desktop
+  .banner-1.desktop-banner-container {
+    margin: 50px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1520px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-1.desktop-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-1.desktop-banner-container .banner-name {
+    position: absolute;
+    background-color: #eef9ff;
+    width: 85px;
+    text-align: center;
+    left: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-1.desktop-banner-container .banner-name h1 {
+    transform: rotate(-90deg);
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0;
+    color: #0091ff;
+    min-width: max-content;
+  }
+
+  .banner-1.desktop-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-1.desktop-banner-container .content-container .left-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 45%;
+    height: 100%;
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .left-section
+    .banner-image {
+    max-width: 550px;
+    margin: 0 0 0 auto;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .banner-1.desktop-banner-container .content-container .right-section {
+    width: 55%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .right-section
+    .company-logo {
+    max-width: 250px;
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .right-section
+    .product-name {
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    max-width: 85%;
+    margin: 0;
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .right-section
+    .product-cost {
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: center;
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .right-section
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .right-section
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid black;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .right-section
+    .shop-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #ac0236;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-1.desktop-banner-container
+    .content-container
+    .right-section
+    .discount-offer {
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    background-color: #4848e8;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 700;
+    width: 125px;
+    height: 125px;
+    padding: 20px;
+    clip-path: circle(100px at 100px 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  // mobile
+  .banner-1.mobile-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 560px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-1.mobile-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-1.mobile-banner-container .banner-name {
+    position: absolute;
+    background-color: #eef9ff;
+    text-align: center;
+    left: -100px;
+    top: 0;
+    left: 0;
+    margin: 10px 0;
+  }
+
+  .banner-1.mobile-banner-container .banner-name h1 {
+    font-size: 18px;
+    margin: 5px 10px;
+    color: #0091ff;
+  }
+
+  .banner-1.mobile-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    row-gap: 15px;
+  }
+
+  .banner-1.mobile-banner-container .content-container .company-logo {
+    max-width: 150px;
+    max-height: 50px;
+    object-fit: contain;
+  }
+
+  .banner-1.mobile-banner-container .content-container .product-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    max-width: 55%;
+    margin: 0;
+  }
+
+  .banner-1.mobile-banner-container .content-container .product-cost {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    justify-content: center;
+  }
+
+  .banner-1.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-1.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid black;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-1.mobile-banner-container .content-container .shop-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #ac0236;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-1.mobile-banner-container .content-container .banner-image {
+    max-width: 300px;
+    max-height: 150px;
+  }
+
+  .banner-1.mobile-banner-container .content-container .banner-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-1.mobile-banner-container .discount-offer {
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    background-color: #4848e8;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    width: 90px;
+    height: 90px;
+    padding: 15px;
+    clip-path: circle(70px at 70px 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+// ------------banner-2-------------
+.banner-2 {
+  // desktop
+  .banner-2.desktop-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1520px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-2.desktop-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.3;
+  }
+
+  .banner-2.desktop-banner-container .banner-name {
+    position: absolute;
+    background-color: #384855;
+    text-align: center;
+    left: 0;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-2.desktop-banner-container .banner-name h1 {
+    font-size: 34px;
+    font-weight: 500;
+    margin: 10px 10px 10px 40px;
+    color: #fdfeff;
+    min-width: max-content;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  .banner-2.desktop-banner-container .banner-name h1 img {
+    width: 35px;
+    margin: 0px 0 0 10px;
+  }
+
+  .banner-2.desktop-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 40px 40px 40px;
+    box-sizing: border-box;
+    row-gap: 15px;
+  }
+
+  .banner-2.desktop-banner-container .content-container .company-logo {
+    max-width: 250px;
+    max-height: 32px;
+    object-fit: contain;
+  }
+
+  .banner-2.desktop-banner-container .content-container .product-name {
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    max-width: 85%;
+    margin: 0;
+    color: #000000;
+  }
+
+  .banner-2.desktop-banner-container .content-container .product-cost {
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: center;
+    color: #000000;
+  }
+
+  .banner-2.desktop-banner-container
+    .content-container
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-2.desktop-banner-container
+    .content-container
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid #000000;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-2.desktop-banner-container .content-container .shop-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #ac0236;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-2.desktop-banner-container .banner-image {
+    width: 40%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    margin: 0 150px 0 0;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .banner-2.desktop-banner-container .banner-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-2.desktop-banner-container .discount-offer {
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 700;
+    width: 130px;
+    height: 130px;
+    padding: 0 0 20px 20px;
+    clip-path: circle(150px at 150px 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  // mobile
+  .banner-2.mobile-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 560px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-2.mobile-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.3;
+  }
+
+  .banner-2.mobile-banner-container .banner-name {
+    position: absolute;
+    background-color: #384855;
+    text-align: center;
+    left: -100px;
+    top: 0;
+    left: 0;
+    margin: 30px 0;
+  }
+
+  .banner-2.mobile-banner-container .banner-name h1 {
+    font-size: 22px;
+    margin: 5px 10px 5px 15px;
+    font-weight: 500;
+    color: #fdfeff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-2.mobile-banner-container .banner-name h1 img {
+    width: 25px;
+    margin: 0 0 0 7px;
+  }
+
+  .banner-2.mobile-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    row-gap: 20px;
+    padding: 90px 30px 30px 30px;
+    box-sizing: border-box;
+  }
+
+  .banner-2.mobile-banner-container .content-container .company-logo {
+    max-width: 150px;
+    max-height: 22px;
+    object-fit: contain;
+  }
+
+  .banner-2.mobile-banner-container .content-container .product-name {
+    font-size: 30px;
+    font-weight: 700;
+    max-width: 55%;
+    margin: 0;
+  }
+
+  .banner-2.mobile-banner-container .content-container .product-cost {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 220px;
+  }
+
+  .banner-2.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-2.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid black;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-2.mobile-banner-container .content-container .shop-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #ac0236;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-2.mobile-banner-container .banner-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 320px;
+  }
+
+  .banner-2.mobile-banner-container .banner-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-2.mobile-banner-container .discount-offer {
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 700;
+    width: 130px;
+    height: 130px;
+    padding: 0 0 20px 20px;
+    clip-path: circle(130px at 130px 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+// ------------banner-3--------------
+.banner-3 {
+  // desktop
+  .banner-3.desktop-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1520px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-3.desktop-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-3.desktop-banner-container .banner-name {
+    position: absolute;
+    background-color: #fccfa5;
+    width: 85px;
+    text-align: center;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-3.desktop-banner-container .banner-name h1 {
+    transform: rotate(-90deg);
+    font-size: 38px;
+    font-weight: 600;
+    margin: 0;
+    color: #000000;
+    min-width: max-content;
+  }
+
+  .banner-3.desktop-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 40px 135px;
+    box-sizing: border-box;
+    row-gap: 10px;
+  }
+
+  .banner-3.desktop-banner-container .content-container .company-logo {
+    max-width: 250px;
+    max-height: 52px;
+    object-fit: contain;
+  }
+
+  .banner-3.desktop-banner-container .content-container .product-name {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    color: #000000;
+  }
+
+  .banner-3.desktop-banner-container .content-container .sub-brand {
+    background-color: #6a350e;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+  }
+
+  .banner-3.desktop-banner-container .content-container .sub-brand p {
+    font-size: 32px;
+    margin: 10px;
+  }
+
+  .banner-3.desktop-banner-container .content-container .product-cost {
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: center;
+    color: #000000;
+    margin: auto;
+  }
+
+  .banner-3.desktop-banner-container
+    .content-container
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-3.desktop-banner-container
+    .content-container
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid #000000;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-3.desktop-banner-container .content-container .shop-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    margin: auto;
+  }
+
+  .banner-3.desktop-banner-container .banner-image {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 340px;
+    margin: 0 250px 0 0;
+  }
+
+  .banner-3.desktop-banner-container .banner-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-3.desktop-banner-container .discount-offer {
+    right: 50px;
+    top: 0px;
+    position: absolute;
+    background-color: #b6100f;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 700;
+    width: 145px;
+    height: 145px;
+    clip-path: circle(100px at 73px 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  // mobile
+  .banner-3.mobile-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 560px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-3.mobile-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-3.mobile-banner-container .banner-name {
+    position: absolute;
+    background-color: #fccfa5;
+    text-align: center;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-3.mobile-banner-container .banner-name h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000000;
+    min-width: max-content;
+    transform: rotate(90deg);
+  }
+
+  .banner-3.mobile-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    row-gap: 8px;
+    padding: 30px 90px 30px 30px;
+    box-sizing: border-box;
+  }
+
+  .banner-3.mobile-banner-container .content-container .company-logo {
+    max-width: 150px;
+    max-height: 36px;
+    object-fit: contain;
+  }
+
+  .banner-3.mobile-banner-container .content-container .product-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .banner-3.mobile-banner-container .content-container .sub-brand {
+    background-color: #6a350e;
+    color: #ffffff;
+    width: 100%;
+    text-align: start;
+    background-image: linear-gradient(to left, #fde7c6, #6a350e);
+  }
+
+  .banner-3.mobile-banner-container .content-container .sub-brand p {
+    font-size: 20px;
+    margin: 5px 10px;
+  }
+
+  .banner-3.mobile-banner-container .content-container .product-cost {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 220px;
+  }
+
+  .banner-3.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-3.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid black;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-3.mobile-banner-container .content-container .shop-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-3.mobile-banner-container .banner-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 200px;
+    margin: 10px 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-3.mobile-banner-container .banner-image img {
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 1;
+  }
+
+  .banner-3.mobile-banner-container .banner-image .discount-offer {
+    position: absolute;
+    background-color: #b6100f;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    width: 200px;
+    height: 100px;
+    clip-path: circle(130px at 170px 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    right: 130px;
+    bottom: 30px;
+  }
+}
+
+// ------------banner-4--------------
+.banner-4 {
+  // desktop
+
+  .banner-4.desktop-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1520px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-4.desktop-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-4.desktop-banner-container .banner-name-container {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: #d1d7de;
+  }
+
+  .banner-4.desktop-banner-container .banner-name-container .banner-name {
+    width: 85px;
+    text-align: center;
+    background-color: #395d8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 10px;
+  }
+
+  .banner-4.desktop-banner-container .banner-name-container .banner-name h1 {
+    transform: rotate(-90deg);
+    font-size: 38px;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+    min-width: max-content;
+  }
+
+  .banner-4.desktop-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 40px 140px;
+    box-sizing: border-box;
+    row-gap: 12px;
+  }
+
+  .banner-4.desktop-banner-container .content-container .company-logo {
+    max-width: 250px;
+    max-height: 42px;
+    object-fit: contain;
+  }
+
+  .banner-4.desktop-banner-container .content-container .product-name {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    color: #000000;
+  }
+
+  .banner-4.desktop-banner-container .content-container .product-cost {
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: center;
+    color: #000000;
+  }
+
+  .banner-4.desktop-banner-container
+    .content-container
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-4.desktop-banner-container
+    .content-container
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid #000000;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-4.desktop-banner-container .content-container .shop-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #c71717;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-4.desktop-banner-container .banner-image {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 40px 0 0;
+    column-gap: 25px;
+  }
+
+  .banner-4.desktop-banner-container .banner-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-4.desktop-banner-container .discount-offer {
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 700;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 40px;
+  }
+
+  // mobile
+  .banner-4.mobile-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 560px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-4.mobile-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-4.mobile-banner-container .banner-name {
+    position: absolute;
+    background-color: #395d8a;
+    text-align: center;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .banner-4.mobile-banner-container .banner-name h1 {
+    font-size: 20px;
+    margin: 5px 15px;
+    font-weight: 600;
+    color: #ffffff;
+    min-width: max-content;
+  }
+
+  .banner-4.mobile-banner-container .content-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    row-gap: 8px;
+    padding: 60px 20px 20px 20px;
+    box-sizing: border-box;
+  }
+
+  .banner-4.mobile-banner-container .content-container .company-logo {
+    max-width: 150px;
+    max-height: 26px;
+    object-fit: contain;
+  }
+
+  .banner-4.mobile-banner-container .content-container .product-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .banner-4.mobile-banner-container .content-container .product-cost {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 220px;
+  }
+
+  .banner-4.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-4.mobile-banner-container
+    .content-container
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid black;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-4.mobile-banner-container .content-container .shop-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #c71717;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-4.mobile-banner-container .banner-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 175px;
+    margin: 0 150px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+  }
+
+  .banner-4.mobile-banner-container .banner-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-4.mobile-banner-container .banner-image .discount-offer {
+    right: -120px;
+    top: 0px;
+    position: absolute;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 30px;
+  }
+}
+
+// ------------banner-5--------------
+.banner-5 {
+  // desktop
+  .banner-5.desktop-banner-container {
+    margin: 50px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1520px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-5.desktop-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-5.desktop-banner-container .banner-name {
+    position: absolute;
+    left: 0;
+    width: 85px;
+    text-align: center;
+    background-color: #41576d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .banner-5.desktop-banner-container .banner-name h1 {
+    transform: rotate(-90deg);
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+    min-width: max-content;
+  }
+
+  .banner-5.desktop-banner-container .content-product-container {
+    position: absolute;
+    padding: 40px 40px 40px 140px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .content-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 12px;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .content-container
+    .company-logo {
+    max-width: 250px;
+    max-height: 42px;
+    object-fit: contain;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .content-container
+    .product-name {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    color: #40576d;
+    background-color: #ffffff;
+    padding: 5px 10px;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .content-container
+    .discount-offer {
+    color: #c71717;
+    font-size: 50px;
+    font-weight: 700;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .content-container
+    .shop-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-5.desktop-banner-container .content-product-container .banner-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1,
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 40px 0 0;
+    column-gap: 25px;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    img,
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 300px;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    .product-cost,
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    .product-cost {
+    font-size: 28px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: center;
+    color: #000000;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    .product-cost
+    .actual-price,
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    .product-cost
+    .actual-price::after,
+  .banner-5.desktop-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid #000000;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  // mobile
+
+  .banner-5.mobile-banner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 560px;
+    height: 380px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .banner-5.mobile-banner-container .background-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-5.mobile-banner-container .banner-name {
+    position: absolute;
+    background-color: #395d8a;
+    text-align: center;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .banner-5.mobile-banner-container .banner-name h1 {
+    font-size: 20px;
+    margin: 5px 15px;
+    font-weight: 600;
+    color: #ffffff;
+    min-width: max-content;
+  }
+
+  .banner-5.mobile-banner-container .content-product-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 5px;
+    padding: 60px 20px 10px 20px;
+    box-sizing: border-box;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .content-container
+    .company-logo {
+    max-width: 150px;
+    max-height: 25px;
+    object-fit: contain;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .content-container
+    .product-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    background-color: #ffffff;
+    padding: 5px 10px;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .content-container
+    .discount-offer {
+    color: #c71717;
+    font-size: 30px;
+    font-weight: 700;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .content-container
+    .shop-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+  .banner-5.mobile-banner-container .content-product-container .banner-image {
+    display: flex;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1,
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2 {
+    height: 160px;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    img,
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    .product-cost,
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    .product-cost {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    gap: 8px;
+    padding: 0 0 20px 0;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    .product-cost
+    .actual-price,
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    .product-cost
+    .actual-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1
+    .product-cost
+    .actual-price::after,
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-2
+    .product-cost
+    .actual-price::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid black;
+    width: 100%;
+    transform: rotate(175deg);
+  }
+
+  .banner-5.mobile-banner-container
+    .content-product-container
+    .banner-image
+    .banner-image-1 {
+    flex-direction: row-reverse;
+  }
+}
